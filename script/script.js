@@ -98,10 +98,10 @@ class CardsGenerator {
         this.cards.innerHTML = '';
 
         const filterConditions = this.getSelectedFilms();
-        if (filterConditions) {
+        if (filterConditions.length !== 0) {
             data = data.filter(item => {
                 if (item.movies) {
-                    const executor = filterConditions.every(elem => item.movies.includes(elem));
+                    const executor = filterConditions.some(elem => item.movies.includes(elem));
                     return executor;
                 } else {
                     return false;
@@ -116,7 +116,6 @@ class CardsGenerator {
     }
 
     renderMenu(data) {
-        // this.menu.innerHTML = '';
         const allFilms = this.getAllFilms(data);
         
         allFilms.forEach(item => this.menu.appendChild(this.createMenuElement(item)));
