@@ -1,0 +1,92 @@
+ul {
+    list-style: none;
+    padding: 0 20px;
+}
+
+li {
+    padding: 0;
+}
+
+ol {
+    padding: 0 20px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.content {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    width: 100%;
+    max-width: 300px;    
+    border-radius: 5%;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.50);
+    margin-right: 50px;
+    max-height: 1000px;
+}
+
+.cards {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list__item {
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 5%;
+    font-size: 20px;
+    transition: .3s ease;
+}
+
+.list__item-active {
+    background-color:#e0e0e0;
+    color: orange;
+}
+
+.list__item:hover {
+    background-color:#e0e0e0;
+    color: orange;
+}
+
+.title {
+    font-weight: 600;
+}
+
+.cards__card {
+    margin-right: 30px;
+    margin-bottom: 20px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.50);
+    border-radius: 5%;
+    padding: 30px;
+}
+
+.cards__img {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards__card img {
+    width: 200px;
+    border-radius: 2px;
+    display: flex;
+    margin-bottom: 10px;
+}
