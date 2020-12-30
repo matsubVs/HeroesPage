@@ -162,3 +162,8 @@ class CardsGenerator {
 const menu = document.querySelector('.list__items');
 const cards = document.querySelector('.cards');
 new CardsGenerator(menu, cards);
+
+const button = document.querySelector('.reset');
+button.addEventListener('click', () => {
+    location.reload();
+});
