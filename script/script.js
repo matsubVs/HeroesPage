@@ -2,7 +2,7 @@ String.prototype.firstLetterCaps = function() {
     return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
 };
 
-class CardsGenerator {
+class PageGenerator {
     constructor(menu, cards) {
         this.menu = menu;
         this.cards = cards;
@@ -176,4 +176,4 @@ class CardsGenerator {
 
 const menu = document.querySelector('.list__items');
 const cards = document.querySelector('.cards');
-new CardsGenerator(menu, cards);
+new PageGenerator(menu, cards);
