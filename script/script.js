@@ -8,10 +8,15 @@ class CardsGenerator {
         this.cards = cards;
         this.reload = true;
         this.cardWorker();
-        this.menuEventHandler();
+        this.eventHandlers();
     }
 
-    menuEventHandler() {
+    eventHandlers() {
+        const button = document.querySelector('.reset');
+        button.addEventListener('click', () => {
+            this.clearFilters();
+        });
+
         this.menu.addEventListener('click', event => {
             const target = event.target;
             if (target.matches('.list__item')) {
@@ -132,12 +137,23 @@ class CardsGenerator {
         return films;
     }
 
-    getSelectedFilms() {
+    getSelectedFilms(items = false) {
+        if (items) {
+            return [...this.menu.querySelectorAll('.list__item-active')];
+        }
+
         const selectedItems = [...this.menu.querySelectorAll('.list__item-active')];
         const selectedFilms = selectedItems.map(item => item.textContent);
 
         return selectedFilms;
         
+    }
+
+    clearFilters() {
+        const activeFilters = this.getSelectedFilms(true);
+        activeFilters.forEach(item => item.classList.toggle('list__item-active'));
+
+        this.cardWorker();
     }
 
     cardWorker() {
@@ -161,8 +177,3 @@ class CardsGenerator {
 const menu = document.querySelector('.list__items');
 const cards = document.querySelector('.cards');
 new CardsGenerator(menu, cards);
-
-const button = document.querySelector('.reset');
-button.addEventListener('click', () => {
-    location.reload();
-});
